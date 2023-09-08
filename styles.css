@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root{
+--Almost-White: hsl(0, 0%, 98%);
+--Medium-Gray: hsl(0, 0%, 41%);
+--Almost-Black: hsl(0, 0%, 8%);
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Epilogue", sans-serif;
+    background-color: var(--Almost-White);
+}
+.container{
+    padding: 30px;
+}
+
+/* nav bar */
+
+.nav-bar{
+    display: flex;
+}
+.nav-bar .logo-img{
+    width: 80px;
+}
+.nav-bar .mobile-nav{
+    display: none;
+}
+.nav-links{
+    display: flex;
+    flex-grow: 2;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.nav-links ul{
+    display: flex;
+    gap: 2rem;
+}
+li{
+    list-style: none;
+}
+a,p{
+    color: var(--Medium-Gray);
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav-links a:hover{
+    color: var(--Almost-Black);
+}
+.dropdown{
+    position: relative;
+}
+.sub-menu{
+    display: none;
+    position: absolute;
+    background-color: var(--Almost-White);
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.15);
+    z-index: 2;
+}
+.feature-menu{
+    left: -30px;
+}
+.sub-menu-icon{
+    margin-right: 10px;
+}
+.dropdown:hover .sub-menu{
+    display: block;
+}
+.register-menu{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.nav-btn{
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--Almost-Black);
+    background-color: transparent;
+    color: var(--Medium-Gray);
+    cursor: pointer;
+}
+.nav-btn:hover{
+    color: var(--Almost-Black);
+}
+.login{
+    border: none;
+}
+
+/* content section */
+
+.content{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 75vh;
+    padding: 30px 80px 80px;
+    justify-content: center;
+    gap: 30px;
+}
+
+.section{
+    width: 50%;
+}
+/* .img-section .img{
+    display: inline;
+} */
+picture img{
+    margin-left: 20%;
+    height: 100%;
+}
+.content-section{
+    position: relative;
+}
+
+.content-section h1{
+    font-size: 3.5rem;
+    width: 80%;
+    font-weight: 700;
+}
+.content-section p{
+    line-height: 1.8;
+    width: 61%;
+    margin-bottom: 50px;
+}
+.content-btn{
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--Almost-Black);
+    color: var(--Almost-White);
+    font-weight: 700;
+    border: none;
+}
+.footer{
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 70%;
+    bottom: 5px;
+}
+
+
+@media (max-width: 700px){
+    .container{
+        padding: 0;
+    }
+    .nav-bar{
+        justify-content: space-between;
+        padding: 10px;
+    }
+    .nav-links{
+        display: none;
+    }
+    .nav-bar .mobile-nav{
+        display: flex;
+    }
+    .ham{
+        cursor: pointer;
+    }
+    .mobile-menu .close-icon{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .mobile-menu{
+        display: flex;
+        position: absolute;
+        transform: translate(100%);
+        right: 0;
+        top: 0;
+        background-color: var(--Almost-White);
+        width: 60%;
+        padding: 60px 20px;
+        height: 100vh;
+        transition: .5s;
+        overflow: hidden;
+        z-index: 2;
+    }
+    .mobile-menu ul{
+        padding: 0 10px;
+    }
+    .mobile-menu li{
+        color: var(--Medium-Gray);
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .dropdown:hover .sub-menu{
+        display: block;
+        position: relative;
+    }
+    .register-menu{
+        flex-direction: column;
+    }
+
+    /* mobile content */
+
+    .content{
+        padding: 0;
+        flex-direction: column;
+        height: 100%;
+        align-items: flex-start;
+    }
+    .section{
+        width: 100%;
+    }
+    picture img{
+        margin: 0;
+        width: 100%;
+    }
+    .content-section{
+        text-align: center;
+        padding: 10px;
+    }
+    .content-section h1{
+        width: 100%;
+        font-size: 2rem;
+    }
+    .content-section p{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .footer{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        position: static;
+        padding: 40px 0;
+        width: 100%;
+    }
+    .footer img{
+        width: 100%;
+    }
+    
+    
+    
+}
